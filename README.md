@@ -14,3 +14,5 @@
 | 6.11.2024    | 0.25       | Portswigger - WSA - LAB: "SQL injection vulnerability in WHERE ..." | Completed 1st lab on SQL injection topic and wrote reflection about the lab exercise |
 | 6.11.2024    | 1          | Portswigger - WSA - Authentication + Authentication Lab exercise   | Learned about authentication vulnerabilities and brute-force attacks on password-based authentication; Completed 1st lab on Authentication topic and wrote reflection about the lab exercise |
 | 6.11.2024    | 1          | Portswigger - WSA - Access control + Access control Lab exercise   | learned about basics of access control up until the first lab, Completed 1st lab on access control topic and wrote reflection  |
+| 9.11.2024    | 1          | Portswigger - WSA - Access control + Access control Labs           | Completed 3 apprentice level labs on access control topic  |
+| 9.11.2024    | 1          | Portswigger - WSA - Authentication Lab                             | Completed practitioner level lab on authentication topic  |
