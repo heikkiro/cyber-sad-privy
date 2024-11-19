@@ -1,0 +1,77 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light grey background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container styles */
+.container {
+    background: #ffffff; /* White container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a modern look */
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Header styles */
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF; /* Subtle blue color for the header */
+    font-size: 24px;
+}
+
+/* Form styles */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Button styles */
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

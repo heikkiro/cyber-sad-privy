@@ -1,8 +1,12 @@
 //app.js
 import { Hono } from "https://deno.land/x/hono/mod.ts";
 import { registerUser } from "./routes/register.js"; //import register logic
+import { serveStatic } from "https://deno.land/x/hono/middleware.ts";
 
 const app = new Hono();
+
+// Serve static files from the /static directory
+app.use('/static/*', serveStatic({ root: '.' }));
 
 // Serve the registration form
 app.get('/register', async (c) => {

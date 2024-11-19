@@ -4,26 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Register</h1>
-    <form action="/register" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="/register" method="POST" class="form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
 
-        <label for="birthdate">Birthdate:</label>
-        <input type="date" id="birthdate" name="birthdate" required><br><br>
+            <div class="form-group">
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
 
-        <label for="role">Role:</label>
-        <select id="role" name="role">
-            <option value="reserver">Reserver</option>
-            <option value="administrator">Administrator</option>
-        </select><br><br>
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="reserver">Reserver</option>
+                    <option value="administrator">Administrator</option>
+                </select>
+            </div>
 
-        <button type="submit">Register</button>
-    </form>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
 </body>
 </html>
