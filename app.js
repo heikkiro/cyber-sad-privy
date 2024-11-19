@@ -1,7 +1,9 @@
 //app.js
 import { Hono } from "https://deno.land/x/hono/mod.ts";
-import { registerUser } from "./routes/register.js"; //import register logic
 import { serveStatic } from "https://deno.land/x/hono/middleware.ts";
+import { registerUser } from "./routes/register.js"; //import register logic
+import { loginUser } from "./routes/login.js"; // Import login logic
+
 
 const app = new Hono();
 
@@ -13,8 +15,16 @@ app.get('/register', async (c) => {
   return c.html(await Deno.readTextFile('./views/register.html'));
 });
 
+// Serve the login form
+app.get('/login', async (c) => {
+  return c.html(await Deno.readTextFile('./views/login.html'));
+});
+
 // Route for user registration (POST request)
 app.post('/register', registerUser);
+
+// Route for user login (POST request)
+app.post('/login', loginUser);
 
 Deno.serve(app.fetch);
 
