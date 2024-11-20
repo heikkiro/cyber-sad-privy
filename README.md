@@ -1,5 +1,7 @@
 # Logbook
 
+This is a logbook for Datasecurity and Data Privacy -course
+
 | Date         | Number of hours used | Subject(s) | outcome |
 | :---         |   :---:    |     :---:                                                          |     :---:                                        |
 | 31.10.2024   | 1.75       | Kick Off Lecture (rec) & Tutorial: Link to the Git repo +Logbook   | Started the course & created git repo and logbook|
@@ -21,3 +23,5 @@
 | 13.11.2024   | 1.5       | Workshop lecture & booking system project phase 1  | Cleared database users to test again on the same codes -> security testing; 1 test done again + got "better" test report with more alerts |
 | 18.11.2024   | 2.75      | Tutorial: Week3-Fixing the issues, Booking system project Phase 1   | Watched tutorial recording, worked on booking system (penetration testing & improving validation of user registering) |
 | 18.11.2024   | 0.25      | Booking system project -phase 1                                      | (Link to 1st report: https://github.com/heikkiro/cyber-sad-privy/blob/a12992eb19b30f58557ae23aa5034526ff1f3eb9/Registration_page_first_test.md ) [Done in between: 1. added validation rules for username (lenght(max50), username must be password), 2. tested with ZAP, 3. used HAR-log file import to test again on ZAP, 4. improved username email validation with Zod, 5. new HAR-log to Zap and test runs, (Link to 2nd report:  https://github.com/heikkiro/cyber-sad-privy/blob/a12992eb19b30f58557ae23aa5034526ff1f3eb9/registration_page_second_test_set_report.md |
+| 18.11.2024    | 1.5    |   Lecture - Authentication                                          | Learned about authentication via username/password on login page |
+| 19.11.2024    | 1       |  Booking system phase 1 and 2                                       | Implemented CSS-styling and login functionality/page to Booking System project using AI |
