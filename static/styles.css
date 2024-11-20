@@ -64,6 +64,7 @@ input:focus, select:focus {
 .btn {
     background-color: #007BFF;
     color: white;
+    text-decoration: none;
     padding: 10px;
     border: none;
     border-radius: 5px;

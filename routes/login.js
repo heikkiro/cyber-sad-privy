@@ -37,7 +37,11 @@ export async function loginUser(c) {
         }
 
         // Success response
-        return c.text('Login successful!');
+        //return c.text('Login successful! Welcome back, ${stoderUsername}!');
+
+        // Redirect to index page after successful login
+        return c.redirect('/');
+
     } catch (error) {
         if (error instanceof z.ZodError) {
             // Handle validation errors from Zod

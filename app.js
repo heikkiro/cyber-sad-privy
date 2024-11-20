@@ -10,6 +10,11 @@ const app = new Hono();
 // Serve static files from the /static directory
 app.use('/static/*', serveStatic({ root: '.' }));
 
+// Serve the index page
+app.get('/', async (c) => {
+  return c.html(await Deno.readTextFile('./views/index.html'));
+});
+
 // Serve the registration form
 app.get('/register', async (c) => {
   return c.html(await Deno.readTextFile('./views/register.html'));

@@ -44,7 +44,11 @@ export async function registerUser(c) {
         );
 
         // Success response
-        return c.text('User registered successfully!');
+        //return c.text('User registered successfully!');
+
+        // Redirect to index page after successful registration
+        return c.redirect('/');
+
     } catch (error) {
         if (error instanceof z.ZodError) {
             // Handle validation errors from Zod
