@@ -4,7 +4,6 @@ import { serveStatic } from "https://deno.land/x/hono/middleware.ts";
 import { registerUser } from "./routes/register.js"; //import register logic
 import { loginUser } from "./routes/login.js"; // Import login logic
 
-
 const app = new Hono();
 
 // Middleware to set security headers
@@ -27,9 +26,6 @@ app.use('*', async (c, next) => {
 
   await next(); // Continue to the next middleware or route
 });
-
-
-
 
 // Serve static files from the /static directory
 app.use('/static/*', serveStatic({ root: '.' }));
