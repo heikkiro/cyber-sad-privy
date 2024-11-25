@@ -2,7 +2,7 @@
 
 This is a logbook for Datasecurity and Data Privacy -course
 
-Current total of hours used: __33.25h__ (25.11.2024 17:35)
+Current total of hours used: __34.75h__ (25.11.2024 20:13)
 
 
 | Date         | Number of hours used | Subject(s) | outcome |
@@ -32,3 +32,4 @@ Current total of hours used: __33.25h__ (25.11.2024 17:35)
 | 20.11.2024   | 0.25     |    Booking system project - phase 2                                      | (Link to 1st report: https://github.com/heikkiro/cyber-sad-privy/blob/00c99a216646e78effb51b24d8088f92808e12c8/Zap-report_Index_registration_login-201124_test_1.md ) [Done between reports: 1. Multiple test-fix cycles (with har-logs and without), 2. Added a Content Security Policy (CSP) Header (default content type, nosniff), 3. Added X-Frame-Options (Clickjacking alert), 4. Added additional rules to CSP (form-action, frame-ancestors)],  (Link to 2nd report:  https://github.com/heikkiro/cyber-sad-privy/blob/00c99a216646e78effb51b24d8088f92808e12c8/ZAP-report-2_Index_Registration_Login-201124_test-set-6.md ) |
 | 24.11.2024    | 2.5     | Tutorial: Week 4- Adding a logging, Booking system project Phase 2    | Added missing logging succesful logins functionality to the booking system, re-tested with Zap => no new alert types or amounts compared to the previous report  |
 | 25.11.2024   | 1.5       | Lecture (week5): Authorization and Booking system project phase 3   | Learned about authorization and what's going on in BS-project phase 3 |
+| 25.11.2024    | 1.5       | Portswigger-WSA - SQL injection, Authentication           | Completed 2 SQL labs and 1 Authentication lab, learned more about SQLi and authentication vulnerabilities  |
