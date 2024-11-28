@@ -34,3 +34,4 @@ Current total of hours used: __36.25h__ (26.11.2024 20:13)
 | 25.11.2024   | 1.5       | Lecture (week5): Authorization and Booking system project phase 3   | Learned about authorization and what's going on in BS-project phase 3 |
 | 25.11.2024    | 1.5       | Portswigger-WSA - SQL injection, Authentication           | Completed 2 SQL labs and 1 Authentication lab, learned more about SQLi and authentication vulnerabilities  |
 | 26.11.2024    | 1.5       | Workshop 26.11.2024           | Participated a workshop, Learned more about Booking system phase 3, Learned about the website Kali Tools website  |
+| 28.11.2024    | 2          | Cisco NetAcademy: Cybersecurity Essentials                         | Module 1: studied parts 1.0-1.3 (minus labs and packet tracer parts) |
