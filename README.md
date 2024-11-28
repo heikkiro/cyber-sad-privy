@@ -2,7 +2,7 @@
 
 This is a logbook for Datasecurity and Data Privacy -course
 
-Current total of hours used: __34.75h__ (25.11.2024 20:13)
+Current total of hours used: __36.25h__ (26.11.2024 20:13)
 
 
 | Date         | Number of hours used | Subject(s) | outcome |
@@ -33,3 +33,4 @@ Current total of hours used: __34.75h__ (25.11.2024 20:13)
 | 24.11.2024    | 2.5     | Tutorial: Week 4- Adding a logging, Booking system project Phase 2    | Added missing logging succesful logins functionality to the booking system, re-tested with Zap => no new alert types or amounts compared to the previous report  |
 | 25.11.2024   | 1.5       | Lecture (week5): Authorization and Booking system project phase 3   | Learned about authorization and what's going on in BS-project phase 3 |
 | 25.11.2024    | 1.5       | Portswigger-WSA - SQL injection, Authentication           | Completed 2 SQL labs and 1 Authentication lab, learned more about SQLi and authentication vulnerabilities  |
+| 26.11.2024    | 1.5       | Workshop 26.11.2024           | Participated a workshop, Learned more about Booking system phase 3, Learned about the website Kali Tools website  |
