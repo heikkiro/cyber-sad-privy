@@ -1,72 +1,73 @@
 import client from "../db/db.js";
-import * as bcrypt from "https://deno.land/x/bcrypt/mod.ts";
-import { z } from "https://deno.land/x/zod@v3.16.1/mod.ts"; // Import Zod
+import * as bcrypt from "https://deno.land/x/bcrypt/mod.ts"; // For password comparison
+import { z } from "https://deno.land/x/zod@v3.16.1/mod.ts"; // For validation
+import { createSession } from "../sessionService.js"; // For sessions
 
-// Zod schema for validating the login form
+// Zod schema for login validation
 const loginSchema = z.object({
-    username: z.string().email({ message: "Invalid email address" }).max(50, "Email must not exceed 50 characters"),
-    password: z.string().min(1, "Password is required"), // Ensure password is not empty
+    username: z.string().email({ message: "Invalid email address" }),
 });
 
-// Handle user login
-export async function loginUser(c) {
-    const body = await c.req.parseBody();
-    const { username, password } = body;
-
+// Log the successful login
+async function logLogin(userUUID, ipAddress) {
     try {
-        // Validate input using Zod
-        loginSchema.parse({ username, password });
+        await client.queryArray(`INSERT INTO login_logs (user_token, ip_address) VALUES ($1, $2)`, [userUUID, ipAddress]);
+    } catch (error) {
+        console.error("Error logging login event:", error);
+    }
+}
 
-        // Check if the user exists and fetch user_token and password_hash
-        const result = await client.queryArray(
-            `SELECT user_token, password_hash FROM zephyr_users WHERE username = $1`,
-            [username]
-        );
+// Helper function to fetch the user by email
+async function getUserByEmail(email) {
+    const result = await client.queryArray(`SELECT username, password_hash, user_token, role FROM zephyr_users WHERE username = $1`, [email]);
+    return result.rows.length > 0 ? result.rows[0] : null;
+}
 
-        if (result.rows.length === 0) {
-            // If no user is found, return an error
-            return c.text('Invalid username or password', 400);
+// Handle user login
+export async function loginUser(req, info) {
+    const username = req.get('username');
+    const password = req.get('password');
+    try {
+        // Validate the input data using Zod
+        loginSchema.parse({ username });
+
+        // Fetch the user by email
+        const user = await getUserByEmail(username);
+        if (!user) {
+            return new Response("Invalid email or password", { status: 400 });
         }
 
-        const [userToken, hashedPassword] = result.rows[0];
+        const [storedUsername, storedPasswordHash, userUUID, role] = user;
 
-        // Validate the password
-        const isPasswordValid = await bcrypt.compare(password, hashedPassword);
-        if (!isPasswordValid) {
-            return c.text('Invalid username or password', 400);
+        // Compare provided password with the stored hashed password
+        const passwordMatches = await bcrypt.compare(password, storedPasswordHash);
+        if (!passwordMatches) {
+            return new Response("Invalid email or password", { status: 400 });
         }
 
-        console.log('Raw Headers:', c.req.raw.headers);
-        console.log('Remote Addr:', c.req.raw.conn?.remoteAddr?.hostname);
+        // Create session
+        const sessionId = createSession({ username: storedUsername, role });
 
-        // Safely extract the client's IP address using raw headers
-        let ipAddress = 'Unknown'; // Default fallback
-        const rawHeaders = c.req.raw.headers;
+        // Log successful login
+        const ipAddress = info.remoteAddr.hostname;
+        await logLogin(userUUID, ipAddress);
 
-        if (rawHeaders.get('X-Forwarded-For')) {
-            ipAddress = rawHeaders.get('X-Forwarded-For');
-        } else if (c.req.raw.conn && c.req.raw.conn.remoteAddr) {
-            ipAddress = c.req.raw.conn.remoteAddr.hostname;
-        } else {
-            ipAddress = '127.0.0.1'; // Localhost fallback for development
-        }
+        // Return a redirect response with the Set-Cookie header
+        return new Response(null, {
+            status: 302,
+            headers: {
+                Location: "/",
+                "Set-Cookie": `session_id=${sessionId}; HttpOnly; Secure; SameSite=Strict; Path=/`,
+            },
+        });
 
-        // Log the successful login to the database
-        await client.queryArray(
-            `INSERT INTO login_logs (user_token, ip_address) VALUES ($1, $2)`,
-            [userToken, ipAddress]
-        );
-
-        // Redirect to index page after successful login
-        return c.redirect('/');
 
     } catch (error) {
         if (error instanceof z.ZodError) {
             // Handle validation errors from Zod
-            return c.text(`Validation Error: ${error.errors.map(e => e.message).join(", ")}`, 400);
+            return new Response(`Validation Error: ${error.errors.map(e => e.message).join(", ")}`, { status: 400 });
         }
-
         console.error(error);
-        return c.text('Error during login', 500);
+        return new Response("Error during login", { status: 500 });
     }
 }
