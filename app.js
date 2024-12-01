@@ -19,7 +19,7 @@ async function addSecurityHeaders(req, handler) {
     response.headers.set("Content-Security-Policy",
         "default-src 'self'; " +
         "script-src 'self'; " +
-        "style-src 'self' 'unsafe-inline'; " +  //lisätty 'unsafe-inline'
+        "style-src 'self'; " +
         "img-src 'self'; " +
         "frame-ancestors 'none'; " +
         "form-action 'self';"); // Allow form submissions only to your domain
