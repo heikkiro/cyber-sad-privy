@@ -36,3 +36,5 @@ Current total of hours used: __40.25h__ (30.11.2024 20:05)
 | 26.11.2024    | 1.5       | Workshop 26.11.2024                                                | Participated a workshop, Learned more about Booking system phase 3,<br> Learned about the website Kali Tools website  |
 | 28.11.2024    | 2          | Cisco NetAcademy: Cybersecurity Essentials                        | Module 1: studied parts 1.0-1.3 (minus labs and packet tracer parts) |
 | 30.11.2024    | 2          | Booking system phase 3                                            | replaced phase 2 codes with teacher's phase 3 codes <br> (accidentally used wrong name with a file and it took time to find out the problem), <br> started the report(phase 3) |
+| 1.12.2024    | 2          | Booking system phase 3                                            | found and wrote about couple of problems for the report (phase3), did zap-testing |
+| 2.12.2024    | 1          | Booking system phase 3 (before days lecture)                      | investigated Zap alerts and <br>read about one of them from OWASP-website and <br>discussed with ChatGPT about the findings |
