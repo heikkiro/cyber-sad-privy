@@ -1,8 +1,8 @@
 # Logbook
 
-This is a logbook for Datasecurity and Data Privacy -course
+This is a logbook for Cybersecurity and Data Privacy -course.
 
-Current total of hours used: __44.75h__ (2.12.2024 17:40)
+Current total of hours used: __47.75h__ (3.12.2024 14:20)
 
 
 | Date         | Number of hours used | Subject(s) | outcome |
@@ -39,3 +39,4 @@ Current total of hours used: __44.75h__ (2.12.2024 17:40)
 | 1.12.2024    | 2          | Booking system phase 3                                            | found and wrote about couple of problems for the report (phase3), did zap-testing |
 | 2.12.2024    | 1          | Booking system phase 3 (before days lecture)                      | investigated Zap alerts and <br>read about one of them from OWASP-website and <br>discussed with ChatGPT about the findings |
 | 2.12.2024    | 1.5       | Lecture - GDPR 2.12.2024                                            | Attended lecture and learned about GDPR  |
+| 3.12.2024    | 3          | Booking system phase 3                                            | Completed "Security Check of the Booking System"-document, <br> https://github.com/heikkiro/cyber-sad-privy/blob/9d941910c08dab6c9203bca497bbf11c4710dd8f/Security_Check_of_the_Booking_System.md |
