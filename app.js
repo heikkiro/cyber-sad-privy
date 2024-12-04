@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.199.0/http/server.ts";
 import { loginUser } from "./routes/login.js";
-import { registerUser } from "./routes/register.js";
+import { registerUser, getAccountInfo } from "./routes/register.js";
 import { registerResource, getResources } from "./routes/resource.js";
 import { registerReservation, handleReservationForm } from "./routes/reservation.js";
 import { handleIndex, handleDefaultIndex } from "./routes/indexPage.js";
@@ -55,7 +55,6 @@ async function handler(req) {
     // Route: Index page
     if (url.pathname === "/" && req.method === "GET") {
         const session = getSession(req);
-
         if (session) {
             return await handleIndex(req);
 
@@ -107,6 +106,14 @@ async function handler(req) {
 
     // Route: Resource page
     if (url.pathname === "/resources" && req.method === "GET") {
+        // Authorization part
+        const session = getSession(req);
+        if (!session) {
+            return new Response("Unauthorized", { status: 401 });
+        }
+        if (session.role != "administrator") {
+            return new Response("Unauthorized", { status: 401 });
+        }
         return await serveStaticFile("./views/resource.html", "text/html");
     }
 
@@ -130,6 +137,27 @@ async function handler(req) {
     if (url.pathname === "/reservation" && req.method === "POST") {
         const formData = await req.formData();
         return await registerReservation(formData);
+    }
+
+    // Route: Terms of service page
+    if (url.pathname === "/terms" && req.method === "GET") {
+        return await serveStaticFile("./views/terms.html", "text/html");
+    }
+
+    // Route: Privacy notice page
+    if (url.pathname === "/privacynotice" && req.method === "GET") {
+        return await serveStaticFile("./views/privacynotice.html", "text/html");
+    }
+
+    // Route: Account page
+    if (url.pathname === "/account" && req.method === "GET") {
+        return await serveStaticFile("./views/account.html", "text/html");
+    }
+
+    // Route: Account info
+    if (url.pathname === "/accountInfo" && req.method === "GET") {
+        const session = getSession(req);
+        return await getAccountInfo(session.username);
     }
 
     // Default response for unknown routes

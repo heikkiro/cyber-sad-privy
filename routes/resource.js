@@ -1,4 +1,17 @@
 import client from "../db/db.js";
+import { z } from "https://deno.land/x/zod@v3.16.1/mod.ts"; // Import Zod
+
+// Zod schema for validating the registration form
+const resourceSchema = z.object({
+    resourceName: z.string()
+    .min(4, "Resource name must be at least 4 characters")
+    .max(8, "Resource name must not exceed 8 characters")
+    .regex(/^[a-zA-Z0-9_]+$/, "Resource name can only contain alphanumeric characters and underscores"),
+    resourceDescription: z.string()
+    .min(1, "Resource name must be at least 1 characters")
+    .max(50, "Resource name must not exceed 50 characters")
+    .regex(/^[a-zA-Z0-9_]+$/, "Resource name can only contain alphanumeric characters and underscores"),
+});
 
 export async function getResources(req) {
     const query = `SELECT resource_id, resource_name, resource_description FROM zephyr_resources`;

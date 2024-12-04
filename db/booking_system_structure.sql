@@ -11,6 +11,8 @@ CREATE TABLE zephyr_users (
     password_hash TEXT NOT NULL,
     role VARCHAR(15) CHECK (role IN ('reserver', 'administrator')) NOT NULL,
     birthdate DATE NOT NULL,
+    terms_accepted BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     user_token UUID UNIQUE DEFAULT uuid_generate_v4()  -- Pseudonymized identifier
 );
 
