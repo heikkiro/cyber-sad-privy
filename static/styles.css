@@ -4,9 +4,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100%;
     margin: 0;
 }
+
 
 .container {
     background-color: white;
@@ -15,6 +16,27 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
+}
+
+.container_terms {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container_privacynotice {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 h1 {
@@ -75,6 +97,14 @@ button:hover {
     background-color: #0056b3;
 }
 
+.login_button {
+    margin-top: 20px;
+}
+
+#privacy_link {
+    font-weight: bold;
+}
+
 .error {
     color: red;
     font-size: 0.9rem;
@@ -83,6 +113,14 @@ button:hover {
 .success {
     color: green;
     font-size: 0.9rem;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive design for mobile screens */
@@ -139,3 +177,4 @@ tr:nth-child(even) {
     line-height: 1.5;
     /* Adjust line height for better alignment */
 }
+
