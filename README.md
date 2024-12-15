@@ -2,7 +2,7 @@
 
 This is a logbook for Cybersecurity and Data Privacy -course.
 
-Current total of hours used: __59.5h__ (14.12.2024 20:10)
+Current total of hours used: __61.5h__ (15.12.2024 12:15)
 
 
 | Date         | Number of hours used | Subject(s) | outcome |
@@ -44,3 +44,5 @@ Current total of hours used: __59.5h__ (14.12.2024 20:10)
 | 8.12.2024    | 4          | Booking system phase 4                                            | Worked on Booking system phase 4, <br> added content to privacy notice and terms of service <br> tested funcionality and security of the Booking system manually and with Zap scans <br> Answered step 4 questions | 
 | 14.12.2024    | 1.5       | Portswigger-WSA - Business logic vulnerabilities                  | Read about Business Logic Vulnerabilities, <br> Completed 2 Business logic vulnerability labs  |
 | 14.12.2024    | 4.25      | Booking System Project - Final phase                              | Worked on the Final Phase document  |
+| 15.12.2024    | 1.25      | Cisco NetAcademy: Cybersecurity Essentials                        | Finished Module 1, (minus labs and packet tracer parts), <br> completed module 1 quiz |
+| 15.12.2024    | 0.75      | Booking System Project - Final phase                              | Completed Final Phase document  |
